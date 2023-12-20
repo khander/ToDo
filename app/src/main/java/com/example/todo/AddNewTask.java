@@ -22,6 +22,7 @@ import com.example.todo.Model.ToDoModel;
 import com.example.todo.Utils.DatabaseHandler;
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
+import java.time.Year;
 import java.util.Calendar;
 
 public class AddNewTask extends BottomSheetDialogFragment {
@@ -130,9 +131,10 @@ public class AddNewTask extends BottomSheetDialogFragment {
                             db.insertTask(task);
                             onSaveClick();
                         }
-                    }, 2023, 5, 1).show();
+                    }, Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH)).show();
 
                 }
+
                 dismiss();
             }
         });
